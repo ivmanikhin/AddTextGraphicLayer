@@ -21,8 +21,8 @@
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
-    <!--<Style x:Key="KatherinePlus" TargetType="Label">
-        <Setter Property="FontFamily" Value="./9540.ttf #Katherine Plus"/>
-    </Style>-->
+    <FontFamily x:Key="KatherinePlus">
+        pack://application:,,,/resources/#Katherine Plus
+    </FontFamily>
 
 </ResourceDictionary>

@@ -86,7 +86,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="9540.ttf"/>
+    <Resource Include="resources\9540.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -39,6 +39,7 @@
                      Margin="0,6,0,0"
                      TextWrapping="Wrap"
                      InputScope="Default"
+                     FontFamily="pack://application:,,,/resources/#Katherine Plus"
                      VerticalScrollBarVisibility="Auto"/>
         </DockPanel>
 

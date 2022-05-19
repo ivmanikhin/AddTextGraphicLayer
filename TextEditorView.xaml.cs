@@ -69,6 +69,8 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
             //string[] fontList = new string[] { "Times New Roman", "Katherine Plus" };
 
             InitializeComponent();
+
+
             inputText.FontSize = Math.Round(Convert.ToDouble(fontSize) * 1.4);
             cancel = true;
         }
@@ -96,7 +98,15 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
         private void HandWriteRadioBTNChecked(object sender, RoutedEventArgs e)
         {
             fontFamilyName = "Katherine Plus";
-            inputText.FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./#Katherine Plus");
+            //byte[] fontData = MainProperties.Resources.KatherinePlus;
+            //IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
+            //System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+            //System.Drawing.Text.PrivateFontCollection fontCollection = new System.Drawing.Text.PrivateFontCollection();
+            //fontCollection.AddMemoryFont(fontPtr, MainProperties.Resources.KatherinePlus.Length);
+            //System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+            //System.Drawing.Font font = new System.Drawing.Font(fontCollection.Families[0], 10);
+            //FontFamily katherinePlus = new FontFamily(font.Name);
+            inputText.FontFamily = new FontFamily(new Uri("pack://application:,,,/AddTextGraphicLayer.ext2;Component/resources/"), "./#Katherine Plus");
         }
 
         private void BlackRadioBTNChecked(object sender, RoutedEventArgs e)

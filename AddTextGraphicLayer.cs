@@ -166,7 +166,6 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
             //measure the string to see how big the image needs to be
             if (fontName == "Katherine Plus")
             {
-
                 byte[] fontData = Resources.KatherinePlus;
                 IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
                 System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
