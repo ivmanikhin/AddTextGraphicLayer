@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Media;
+using MainProperties = AddTextGraphicLayer.Properties;
 
 namespace Ascon.Pilot.SDK.GraphicLayerSample
 {
@@ -34,6 +35,8 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
         public System.Drawing.Color textColor { get; set; }
 
         public int intFontSize { get; set; }
+
+        public FontFamily katherinePlus { get; set; }
 
 
 
@@ -93,7 +96,7 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
         private void HandWriteRadioBTNChecked(object sender, RoutedEventArgs e)
         {
             fontFamilyName = "Katherine Plus";
-            inputText.FontFamily = new FontFamily(new Uri("file:///t:/manikhin_i/Fonts/"), "./#Katherine Plus");
+            inputText.FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./#Katherine Plus");
         }
 
         private void BlackRadioBTNChecked(object sender, RoutedEventArgs e)

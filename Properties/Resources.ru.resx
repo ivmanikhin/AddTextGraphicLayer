@@ -120,7 +120,7 @@
   <data name="CancelBtn" xml:space="preserve">
     <value>Отмена</value>
   </data>
-  <data name="Item" xml:space="preserve">
+  <data name="AddTextGraphicLayerMenuItem" xml:space="preserve">
     <value>Добавить надпись</value>
   </data>
   <data name="txtInputText" xml:space="preserve">

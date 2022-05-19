@@ -3,7 +3,6 @@ F:\VisualStudioProjects\repos\AddTextGraphicLayer\obj\Debug\Resources.baml
 F:\VisualStudioProjects\repos\AddTextGraphicLayer\obj\Debug\TextEditorView.g.cs
 F:\VisualStudioProjects\repos\AddTextGraphicLayer\obj\Debug\AddTextGraphicLayer.ext2_MarkupCompile.cache
 F:\VisualStudioProjects\repos\AddTextGraphicLayer\obj\Debug\AddTextGraphicLayer.ext2_MarkupCompile.lref
-C:\Users\manikhin_i\AppData\Local\ASCON\Pilot-ICE Enterprise\Development\AddTextGraphicLayer\9540.ttf
 C:\Users\manikhin_i\AppData\Local\ASCON\Pilot-ICE Enterprise\Development\AddTextGraphicLayer\AddTextGraphicLayer.ext2.dll
 C:\Users\manikhin_i\AppData\Local\ASCON\Pilot-ICE Enterprise\Development\AddTextGraphicLayer\AddTextGraphicLayer.ext2.pdb
 C:\Users\manikhin_i\AppData\Local\ASCON\Pilot-ICE Enterprise\Development\AddTextGraphicLayer\ru\AddTextGraphicLayer.ext2.resources.dll

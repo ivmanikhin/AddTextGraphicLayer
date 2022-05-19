@@ -61,6 +61,15 @@ namespace AddTextGraphicLayer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add text.
+        /// </summary>
+        public static string AddTextGraphicLayerMenuItem {
+            get {
+                return ResourceManager.GetString("AddTextGraphicLayerMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string CancelBtn {
@@ -70,11 +79,12 @@ namespace AddTextGraphicLayer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add text.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static string Item {
+        public static byte[] KatherinePlus {
             get {
-                return ResourceManager.GetString("Item", resourceCulture);
+                object obj = ResourceManager.GetObject("KatherinePlus", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

@@ -8,6 +8,7 @@ using System.Windows;
 using System.Xml.Serialization;
 using Ascon.Pilot.SDK.ObjectsSample;
 using AddTextGraphicLayer.Properties;
+using System.Data;
 
 namespace Ascon.Pilot.SDK.GraphicLayerSample
 {
@@ -26,7 +27,7 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
         private HorizontalAlignment _horizontalAlignment;
         private bool gotAccess = false;
         private AccessLevel _accessLevel = AccessLevel.None;
-        private const string Item = "Item";
+        private const string AddTextGraphicLayerMenuItem = "AddTextGraphicLayerMenuItem";
         private string text = "";
         private string fontSize = "20";
         private string fontFamilyName = "Times New Roman";
@@ -51,8 +52,8 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
             gotAccess = _accessLevel.ToString().Contains("Agrement");
 
 
-            builder.AddItem(Item, 0)
-                   .WithHeader(Resources.Item)
+            builder.AddItem(AddTextGraphicLayerMenuItem, 0)
+                   .WithHeader(Resources.AddTextGraphicLayerMenuItem)
                    .WithIsEnabled(gotAccess); //пункт меню активен, если есть право согласовывать
 
 
@@ -61,7 +62,7 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
         public void OnMenuItemClick(string name, XpsRenderClickPointContext context)
         {
 
-            if (name == Item)
+            if (name == AddTextGraphicLayerMenuItem)
             {
                 _pageNumber = context.PageNumber + 1; //задание номера страницы
                 _xOffset = (context.ClickPoint.X) * 25.4 / 96; //установка координат в точку клика мышом
@@ -165,8 +166,13 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
             //measure the string to see how big the image needs to be
             if (fontName == "Katherine Plus")
             {
+
+                byte[] fontData = Resources.KatherinePlus;
+                IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
+                System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
                 System.Drawing.Text.PrivateFontCollection fontCollection = new System.Drawing.Text.PrivateFontCollection();
-                fontCollection.AddFontFile("9540.ttf");
+                fontCollection.AddMemoryFont(fontPtr, Resources.KatherinePlus.Length);
+                System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
                 font = new System.Drawing.Font(fontCollection.Families[0], intFontSize);
             }
             System.Drawing.SizeF textSize = drawing.MeasureString(text, font);

@@ -120,7 +120,7 @@
   <data name="CancelBtn" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="Item" xml:space="preserve">
+  <data name="AddTextGraphicLayerMenuItem" xml:space="preserve">
     <value>Add text</value>
   </data>
   <data name="txtInputText" xml:space="preserve">
@@ -146,5 +146,9 @@
   </data>
   <data name="txtNavy" xml:space="preserve">
     <value>Navy</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="KatherinePlus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\9540.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
