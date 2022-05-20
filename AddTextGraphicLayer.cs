@@ -50,11 +50,12 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
             _selected = new DataObjectWrapper(context.DataObject, _repository);
             _accessLevel = GetMyAccessLevel(_selected);
             gotAccess = _accessLevel.ToString().Contains("Agrement");
+            bool notFrozen = !(_selected.StateInfo.State.ToString().Contains("Frozen"));
 
 
             builder.AddItem(AddTextGraphicLayerMenuItem, 0)
                    .WithHeader(Resources.AddTextGraphicLayerMenuItem)
-                   .WithIsEnabled(gotAccess); //пункт меню активен, если есть право согласовывать
+                   .WithIsEnabled(gotAccess & notFrozen); //пункт меню активен, если есть право согласовывать и документ не заморожен
 
 
         }
