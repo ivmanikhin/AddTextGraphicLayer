@@ -69,9 +69,10 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
             //string[] fontList = new string[] { "Times New Roman", "Katherine Plus" };
 
             InitializeComponent();
-
-
-            inputText.FontSize = Math.Round(Convert.ToDouble(fontSize) * 1.4);
+            fontSize = "14";
+            inputText.FontSize = Math.Round(Convert.ToDouble(fontSize) * 1.5);
+            inputFontSize.Text = fontSize;
+            fontSizeSlider.Value = Convert.ToDouble(fontSize); 
             cancel = true;
         }
 
@@ -98,14 +99,6 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
         private void HandWriteRadioBTNChecked(object sender, RoutedEventArgs e)
         {
             fontFamilyName = "Katherine Plus";
-            //byte[] fontData = MainProperties.Resources.KatherinePlus;
-            //IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
-            //System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
-            //System.Drawing.Text.PrivateFontCollection fontCollection = new System.Drawing.Text.PrivateFontCollection();
-            //fontCollection.AddMemoryFont(fontPtr, MainProperties.Resources.KatherinePlus.Length);
-            //System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
-            //System.Drawing.Font font = new System.Drawing.Font(fontCollection.Families[0], 10);
-            //FontFamily katherinePlus = new FontFamily(font.Name);
             inputText.FontFamily = new FontFamily(new Uri("pack://application:,,,/AddTextGraphicLayer.ext2;Component/resources/"), "./#Katherine Plus");
         }
 
@@ -124,13 +117,38 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
             fontSize = inputFontSize.Text;
             try
             {
-                inputText.FontSize = Math.Round(Convert.ToDouble(fontSize) * 1.4);
+                inputText.FontSize = Math.Round(Convert.ToDouble(fontSize) * 1.5);
             }
             catch
             {
-                inputText.FontSize = 14;
+                fontSize = "14";
+                inputText.FontSize = Math.Round(Convert.ToDouble(fontSize) * 1.5);
             }    
         }
+
+        private void FontSizeSliderMove(object sender, RoutedEventArgs e)
+        {
+            fontSize = fontSizeSlider.Value.ToString();
+            inputFontSize.Text = fontSize;
+            inputText.FontSize = Math.Round(Convert.ToDouble(fontSize) * 1.5);
+        }
+
+        //private void MouseWheelHandler(object sender, System.Windows.Input.MouseWheelEventArgs e)
+        //{
+        //    // If the mouse wheel delta is positive, move the box up.
+        //    if (e.Delta > 0)
+        //    {
+        //        inputText.FontSize += 1;
+        //        inputFontSize.Text = inputText.FontSize.ToString();
+        //    }
+
+        //    // If the mouse wheel delta is negative, move the box down.
+        //    if (e.Delta < 0)
+        //    {
+        //        inputText.FontSize -= 1;
+        //        inputFontSize.Text = inputText.FontSize.ToString();
+        //    }
+        //}
 
     }
 }
