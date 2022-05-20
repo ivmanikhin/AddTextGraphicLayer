@@ -50,7 +50,9 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
             //запрос прав на согласование документа:
             _selected = new DataObjectWrapper(context.DataObject, _repository);
             _accessLevel = GetMyAccessLevel(_selected);
-            gotAccess = _accessLevel.ToString().Contains("Agrement");
+            gotAccess = _accessLevel.ToString().Contains("Agrement") |
+                        _accessLevel.ToString().Contains("Agreement") |
+                        _accessLevel.ToString().Contains("Full");
             notFrozen = !(_selected.StateInfo.State.ToString().Contains("Frozen"));
 
 
