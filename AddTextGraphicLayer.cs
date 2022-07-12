@@ -49,13 +49,13 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
             //запрос прав на согласование документа:
             _selected = new DataObjectWrapper(context.DataObject, _repository);
             _accessLevel = GetMyAccessLevel(_selected);
-            gotAccess = _accessLevel.ToString().Contains("Agrement");
+            //gotAccess = _accessLevel.ToString().Contains("Agrement");
             bool notFrozen = !(_selected.StateInfo.State.ToString().Contains("Frozen"));
 
 
             builder.AddItem(AddTextGraphicLayerMenuItem, 0)
                    .WithHeader(Resources.AddTextGraphicLayerMenuItem)
-                   .WithIsEnabled(gotAccess & notFrozen); //пункт меню активен, если есть право согласовывать и документ не заморожен
+                   .WithIsEnabled((((int)_accessLevel & 16) != 0) & notFrozen); //пункт меню активен, если есть право согласовывать и документ не заморожен
 
 
         }
@@ -206,9 +206,9 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
         {
             var currentAccesLevel = AccessLevel.None;
             var person = _repository.GetCurrentPerson();
-            foreach (var position in person.Positions)
+            foreach (var position in person.AllOrgUnits())
             {
-                currentAccesLevel = currentAccesLevel | GetAccessLevel(element, position.Position);
+                currentAccesLevel |= GetAccessLevel(element, position);
             }
 
             return currentAccesLevel;
@@ -221,7 +221,7 @@ namespace Ascon.Pilot.SDK.GraphicLayerSample
             var accesses = GetAccessRecordsForPosition(element, positonId, orgUnits);
             foreach (var source in accesses)
             {
-                currentAccesLevel = currentAccesLevel | source.Access.AccessLevel;
+                currentAccesLevel |= source.Access.AccessLevel;
             }
             return currentAccesLevel;
         }
